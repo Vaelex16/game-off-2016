@@ -233,7 +233,7 @@ public class OVRPlayerController : MonoBehaviour
 	{
 		if (HaltUpdateMovement)
 			return;
-        BobWeapons();
+        //BobWeapons();
 
         joyStickX = Input.GetAxis("Horizontal");
         joyStickZ = Input.GetAxis("Vertical");
