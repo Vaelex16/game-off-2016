@@ -152,6 +152,8 @@ MonoBehaviour:
   type: 0
   deathParticle: {fileID: 1000012583768242, guid: 084b79784492f454f888656d3dd28b24,
     type: 2}
+  pickupManager: {fileID: 0}
+  dropChance: 80
 --- !u!135 &135000013311940844
 SphereCollider:
   m_ObjectHideFlags: 1
