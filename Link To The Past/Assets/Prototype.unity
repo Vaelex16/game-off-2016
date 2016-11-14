@@ -1278,6 +1278,14 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11462408, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11493974, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 2}
   m_IsPrefabParent: 0
@@ -1798,6 +1806,26 @@ Transform:
   m_PrefabParentObject: {fileID: 4000011613521348, guid: a89d91d22ec88d042b88fc9ecbf740ec,
     type: 2}
   m_PrefabInternal: {fileID: 238224425}
+--- !u!1 &238885452 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100008, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 2}
+  m_PrefabInternal: {fileID: 153854390}
+--- !u!114 &238885457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 238885452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfb159ae286b5a54da219561e5af156c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentRupees: 0
+  maxRupees: 99
+  currentScene: 
+  currentMagicPower: 0
+  currentHealth: 0
 --- !u!1001 &241231645
 Prefab:
   m_ObjectHideFlags: 0
@@ -4324,7 +4352,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010642933328, guid: 268de65981a26d14b9d5ac88e03ce7d1, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 268de65981a26d14b9d5ac88e03ce7d1, type: 2}
@@ -8179,7 +8207,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
 --- !u!4 &1205726067 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 2}
@@ -14156,8 +14184,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 2005459618}
   - 114: {fileID: 2005459619}
-  - 135: {fileID: 2005459620}
   - 54: {fileID: 2005459621}
+  - 65: {fileID: 2005459620}
   m_Layer: 0
   m_Name: Weapons
   m_TagString: Player
@@ -14194,8 +14222,8 @@ MonoBehaviour:
   interactables: []
   sword: {fileID: 1091328570}
   shield: {fileID: 0}
---- !u!135 &2005459620
-SphereCollider:
+--- !u!65 &2005459620
+BoxCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -14204,8 +14232,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.5
-  m_Center: {x: 0, y: 0, z: 1.25}
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 0, z: 1}
 --- !u!54 &2005459621
 Rigidbody:
   m_ObjectHideFlags: 0

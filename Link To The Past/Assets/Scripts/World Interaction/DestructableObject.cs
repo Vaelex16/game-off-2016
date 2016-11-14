@@ -9,6 +9,10 @@ public class DestructableObject : MonoBehaviour
     public PickupManager pickupManager;
     public int dropChance;
 
+    public float lifespan = 2.0f;
+    public float flashInterval = 0.33f;
+    public bool flash;
+
     WeaponController controller;
 
 
@@ -18,22 +22,25 @@ public class DestructableObject : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	
+	void Update ()
+    {
+
+        
 	}
 
     public void DestroyObject()
     {
         if(type == ObjectType.Grass)
         {
+            //controller.interactables.Remove(gameObject);
             if (Random.Range(0, 100) < dropChance)
             {
-                PickupManager.PickupType[] possibleDrops = { PickupManager.PickupType.GreenRupee, PickupManager.PickupType.BlueRupee };// PickupManager.PickupType.Heart, PickupManager.PickupType.SmallMagicPot };
+                PickupManager.PickupType[] possibleDrops = { PickupManager.PickupType.GreenRupee, PickupManager.PickupType.BlueRupee, PickupManager.PickupType.Heart };
                 pickupManager.SpawnPickup(possibleDrops, GetComponentInChildren<Transform>());
             }
-            GameObject obj = Instantiate(deathParticle, transform) as GameObject;
+            GameObject obj = Instantiate(deathParticle, transform.position, transform.rotation) as GameObject;
             Destroy(obj, 0.5f);
-            Destroy(this.gameObject,0.5f);
+            Destroy(this.gameObject);
             
         }
     }

@@ -5,6 +5,34 @@ public class PickupObject : MonoBehaviour
 {
     public PickupManager.PickupType type;
 
+    private float lifeSpan = 8.0f;
+    private float flashInterval = 0.33f;
+    public MeshRenderer objRenderer;
+
+    void Start()
+    {
+        if (objRenderer == null)
+            objRenderer = GetComponentInChildren<MeshRenderer>();
+    }
+
+    void Update()
+    {
+        lifeSpan -= Time.deltaTime;
+        if (lifeSpan < 4)
+        {
+            int index = Mathf.FloorToInt(Time.time / flashInterval);
+            index = index % 2;
+            if (index == 0)
+            {
+                objRenderer.enabled = false;
+            }
+            else
+                objRenderer.enabled = true;
+        }
+        if (lifeSpan < 0)
+            Destroy(gameObject);
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (!other.tag.Equals("Player"))

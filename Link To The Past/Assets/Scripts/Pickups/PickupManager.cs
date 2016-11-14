@@ -17,8 +17,12 @@ public class PickupManager : MonoBehaviour
 
     public void SpawnPickup(PickupType[] possibleSpawnTypes, Transform spawnLocation)
     {
-        PickupType type = (PickupType)Random.Range(0, possibleSpawnTypes.Length);
-        Instantiate(pickupPrefabs[(int)type], spawnLocation.position, spawnLocation.rotation);
+        Vector3 spawn = new Vector3(spawnLocation.position.x, spawnLocation.position.y + 1, spawnLocation.position.z);
+       // spawnLocation.position.y += 1;
+        int index = Random.Range(0, possibleSpawnTypes.Length);
+        PickupType type = possibleSpawnTypes[index];
+        Debug.Log("Dropepd " +  type.ToString());
+        Instantiate(pickupPrefabs[(int)type], spawn, spawnLocation.rotation);
     }
 
     public enum PickupType
